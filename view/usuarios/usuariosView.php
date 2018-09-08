@@ -5,14 +5,6 @@
 <body>
 
 
-
-
-
-
-
-
-
-
 <form action="index.php?modulo=usuarios&funcion=editardatos" method="post" enctype="multipart/form-data">
 
 <input type="hidden" name="idusuario"  value="<?php echo $usuario['idusuario']; ?>"  > 
@@ -34,7 +26,7 @@
 
 <label for="roles">roles</label></br>
 <input type="checkbox" name="roles" value="Admin"> Administrador<br>
-<input type="checkbox" name="roles" value="WebMaster" >web master<br>
+<input type="checkbox" name="roles" value="WebMaster" >Web master<br>
 <input type="checkbox" name="roles" value="Cliente">Cliente<br>
 
 <label for="password">password</label></br>

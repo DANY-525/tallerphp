@@ -11,9 +11,38 @@ class masterModel extends conexion{
 
        $retornar = $result->query($sql);
 
-       return $retornar;
+
+        $retornarLastId = $result->insert_id;
+
+        return $retornarLastId;
 
     }//end function insert
+
+
+
+    public function insertRoles($sql){
+
+        $conexion  = new Conexion();
+ 
+        $result =  $conexion->conectarse();
+ 
+ 
+        $retornar = $result->query($sql);
+ 
+ 
+ 
+         return $retornar;
+ 
+     }//end function insert
+
+
+
+
+
+
+
+
+
 
     public function select($sql){
 

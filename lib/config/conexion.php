@@ -6,7 +6,7 @@ class conexion{
     function conectarse(){
 
 
-        $conectarse = new Mysqli("localhost","root","","nexura");
+        $conectarse = new Mysqli("localhost","root","","nexura2");
 
         return $conectarse;
 
@@ -15,8 +15,6 @@ class conexion{
 
     function cerrarConexion(){
 
-
-        
 
    
     }

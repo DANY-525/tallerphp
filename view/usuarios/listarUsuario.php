@@ -1,6 +1,28 @@
 <html>
 <head>
+<style>
 
+
+  img{
+
+      width:60px;
+
+      height:60px;
+
+
+  }
+
+  .paginar{
+
+
+      margin-left:500px;
+
+
+  }
+
+
+
+</style>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 
@@ -32,26 +54,19 @@
   </div>
 </nav>
 
-
-
-
-
-
-
-
-
 <br>
 
 <table class="table">
   <thead class="thead-light">
     <tr>
-      <th scope="col">nombre</th>
+      <th scope="col">Nombre</th>
       <th scope="col">Email</th>
-      <th scope="col">edad</th>
-      <th scope="col">sexo</th>
-      <th scope="col">roles</th>
-      <th scope="col">descripcion</th>
-      <th scope="col"></th>
+      <th scope="col">Edad</th>
+      <th scope="col">Sexo</th>
+      <th scope="col">Roles</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Imagen</th>
+      <th scope="col">Acciones</th>
   
     </tr>
   </thead>
@@ -71,6 +86,7 @@ for ($set = array (); $row = $usuarios->fetch_assoc(); $set[] = $row){
             <td>'.$row['sexo'].'</td>
             <td>'.$row['roles'].'</td>
             <td>'.$row['descripcion'].'</td>
+            <td><img src="../resource/img/'.$row['imgperfil'].'" alt=""></td>
             <td><a href="index.php?modulo=usuarios&funcion=update&id='.$row['idusuario'].'">Editar</a></td>
             <td><a href="">Eliminar</a></td>
 
@@ -93,6 +109,34 @@ echo $html
 
 
 </table>
+
+<nav class="paginar" aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+<?php
+$tamanoiterrar = round($tamano/5);
+
+for ($i=0; $i < $tamanoiterrar ; $i++) { 
+  
+ echo $html =' <li class="page-item"><a class="page-link" href="index.php?modulo=usuarios&funcion=listar&P='.$i.'">'.$i.'</a></li>';
+
+}
+
+?>
+
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+  </ul>
+</nav>
 
 
 

@@ -146,12 +146,10 @@ class usuariosController extends usuariosModel{
            $email = $_POST['email'];
            $sexo =  $_POST['gender'];
            $roles =  $_POST['roles'];
-           $imagen =  $_FILES['file-0'];
+           $imagen =  $_FILES['archivo'];
 
 
             usuariosModel::setUserUpdate($idUsuario,$nombre,$descripcion,$email,$sexo,$roles,$password,$imagen);
-
-
 
 
     }

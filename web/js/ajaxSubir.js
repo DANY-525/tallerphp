@@ -7,7 +7,7 @@ $(document).on('ready',function(){
       event.preventDefault();
 
           var url="index.php?modulo=usuarios&funcion=insertarDatos";
-          var form = document.getElementById("formulario");
+         /* var form = document.getElementById("formulario");
 
           var data   = new FormData(form);
             jQuery.each($('input[type=file]')[0].files, function(i, file) {
@@ -17,11 +17,11 @@ $(document).on('ready',function(){
             $.each(other_data,function(key,input){
                 data.append(input.name,input.value);
             });
-
+            */
 
         jQuery.ajax({
             url: url,
-            data: data,
+            data: new FormData(this),
             cache: false,
             contentType: false,
             processData: false,
